@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+main{
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#movingslider{
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.image{
+    width: 60vw;
+    aspect-ratio: 16/9;
+    scroll-snap-align: start;
+    display: none;
+    object-fit: cover;
+}
+#image1{
+    display: block;
+}
+.progress{
+    width: 90%;
+    margin-bottom: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30px;
+}
+#bar{
+    position: absolute;
+    background: #3498db;
+    height: 4px;
+    transition: linear 0.2s;
+}
+.numbers{
+    top: 0px;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+.number{
+    display: block;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px #e0e0e0 solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #e0e0e0;
+}
+.active{
+    border: #3498db 3px solid;
+    color: black;
+    transition: 0.5s ease-in;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+input{
+    padding: 10px 30px;
+    color: white;
+    background:#3498db;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+input:disabled{
+    cursor: not-allowed;
+    background: #e0e0e0;
+}
+
+.progress::before{
+    content: '';
+    width: 100%;
+    height: 4px;
+    background: #e0e0e0;
+}
+
+@media screen and (max-width:1023px){
+    .image{
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width:767px){
+    .image{
+        width: 90vw;
+    }
+}
